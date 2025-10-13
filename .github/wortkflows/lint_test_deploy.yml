@@ -1,0 +1,16 @@
+name: Lint Test Deploy Code
+on: push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get code
+        uses: actions/checkout@v5
+      - name: Install NodeJS
+        uses: actions/setup-node@v5
+        with:
+          node-version: 18
+      - name: install dependencies
+        run: npm ci
+      - name: run linting
+        run: npm lint
