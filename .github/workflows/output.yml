@@ -1,5 +1,5 @@
 name: Get output from metadata
-on: issues
+on: [issues, workflow_dispatch]
 jobs:
   metadata:
     runs-on: ubuntu-latest
